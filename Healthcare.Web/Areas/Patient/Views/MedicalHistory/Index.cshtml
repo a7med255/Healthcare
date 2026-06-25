@@ -1,0 +1,9 @@
+@model IReadOnlyList<Healthcare.Web.ViewModels.Patient.MedicalRecordSummaryViewModel>
+@{
+    ViewData["Title"] = "Medical History";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div><h1 class="h3">Medical history</h1><p class="text-secondary mb-0">Diagnosis and prescriptions saved by approved doctors.</p></div>
+    <a class="btn btn-outline-primary" asp-action="ExportPdf">Export PDF</a>
+</div>
+<div class="card border-0 shadow-sm"><div class="card-body"><partial name="_RecordsTable" model="Model" /></div></div>

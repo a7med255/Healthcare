@@ -1,0 +1,9 @@
+@model IReadOnlyList<Healthcare.Web.ViewModels.Patient.MedicalRecordSummaryViewModel>
+@{
+    ViewData["Title"] = "Patient History";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div><h1 class="h3">Patient medical history</h1><p class="text-secondary mb-0">Review records before adding a new diagnosis.</p></div>
+    <a class="btn btn-primary" asp-area="Doctor" asp-controller="MedicalRecords" asp-action="Create">Add record</a>
+</div>
+<div class="card border-0 shadow-sm"><div class="card-body"><partial name="~/Areas/Patient/Views/MedicalHistory/_RecordsTable.cshtml" model="Model" /></div></div>
