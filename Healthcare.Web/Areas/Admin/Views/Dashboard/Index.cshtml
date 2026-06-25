@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm"><div class="card-body p-4">
+            <h1 class="h3">Admin dashboard</h1>
+            <p class="text-secondary">Manage doctor verification and platform governance.</p>
+            <a class="btn btn-primary" asp-area="Admin" asp-controller="DoctorApprovals" asp-action="Index">View doctor requests</a>
+        </div></div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card border-0 shadow-sm"><div class="card-body"><h2 class="h5">Quick actions</h2><ul class="list-unstyled mb-0"><li>Approve verified doctors</li><li>Reject invalid requests</li><li>Monitor onboarding</li></ul></div></div>
+    </div>
+</div>

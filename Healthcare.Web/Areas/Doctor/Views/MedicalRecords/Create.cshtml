@@ -1,0 +1,14 @@
+@model Healthcare.Web.ViewModels.Doctor.CreateMedicalRecordViewModel
+@{
+    ViewData["Title"] = "Create Medical Record";
+}
+<div class="row justify-content-center"><div class="col-lg-8"><div class="card border-0 shadow-sm"><div class="card-body p-4">
+    <h1 class="h3">Add medical record</h1>
+    <form asp-action="Create" method="post" enctype="multipart/form-data" novalidate>
+        <input asp-for="PatientProfileId" type="hidden" />
+        <div class="mb-3"><label asp-for="Diagnosis" class="form-label"></label><textarea asp-for="Diagnosis" class="form-control" rows="6"></textarea><span asp-validation-for="Diagnosis" class="text-danger"></span></div>
+        <div class="mb-3"><label asp-for="PrescriptionImages" class="form-label"></label><input asp-for="PrescriptionImages" class="form-control" type="file" multiple accept="image/*" /></div>
+        <button class="btn btn-primary" type="submit">Save record</button>
+    </form>
+</div></div></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

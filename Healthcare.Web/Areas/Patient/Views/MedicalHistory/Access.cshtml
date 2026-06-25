@@ -1,0 +1,14 @@
+@model Healthcare.Web.ViewModels.Patient.AccessMedicalHistoryViewModel
+@{
+    ViewData["Title"] = "Access Medical History";
+}
+<div class="row justify-content-center"><div class="col-md-6"><div class="card border-0 shadow-sm"><div class="card-body p-4">
+    <h1 class="h3">Access medical history</h1>
+    <p class="text-secondary">Enter the QR token and PIN to unlock medical history.</p>
+    <form asp-action="Access" method="post" novalidate>
+        <div class="mb-3"><label asp-for="QrCodeToken" class="form-label"></label><input asp-for="QrCodeToken" class="form-control" /><span asp-validation-for="QrCodeToken" class="text-danger"></span></div>
+        <div class="mb-3"><label asp-for="Pin" class="form-label"></label><input asp-for="Pin" class="form-control" maxlength="4" inputmode="numeric" /><span asp-validation-for="Pin" class="text-danger"></span></div>
+        <button class="btn btn-primary" type="submit">Unlock history</button>
+    </form>
+</div></div></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

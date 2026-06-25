@@ -1,0 +1,31 @@
+:root {
+    --healthcare-primary: #0d6efd;
+    --healthcare-soft: #eef6ff;
+}
+
+body {
+    background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+.hero-card {
+    background-image: radial-gradient(circle at top right, rgba(13, 110, 253, .12), transparent 35%);
+}
+
+.health-stat-card {
+    background: var(--healthcare-soft);
+    border: 1px solid rgba(13, 110, 253, .12);
+}
+
+.qr-placeholder {
+    min-height: 220px;
+    border: 2px dashed rgba(13, 110, 253, .35);
+    color: rgba(13, 110, 253, .65);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: .25rem;
+}
+
+.card {
+    border-radius: 1rem;
+}

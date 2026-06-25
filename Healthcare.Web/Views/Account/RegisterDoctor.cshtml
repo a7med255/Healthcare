@@ -1,0 +1,28 @@
+@model Healthcare.Web.ViewModels.Account.RegisterDoctorViewModel
+@{
+    ViewData["Title"] = "Doctor Registration";
+}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h1 class="h3 mb-3">Doctor registration</h1>
+                <p class="text-secondary">Doctors behave as patients until admin approval is completed.</p>
+                <form asp-action="RegisterDoctor" method="post" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6"><label asp-for="FullName" class="form-label"></label><input asp-for="FullName" class="form-control" /><span asp-validation-for="FullName" class="text-danger"></span></div>
+                        <div class="col-md-6"><label asp-for="NationalId" class="form-label"></label><input asp-for="NationalId" class="form-control" /><span asp-validation-for="NationalId" class="text-danger"></span></div>
+                        <div class="col-md-6"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" /><span asp-validation-for="Email" class="text-danger"></span></div>
+                        <div class="col-md-6"><label asp-for="MedicalSyndicateNumber" class="form-label"></label><input asp-for="MedicalSyndicateNumber" class="form-control" /><span asp-validation-for="MedicalSyndicateNumber" class="text-danger"></span></div>
+                        <div class="col-md-6"><label asp-for="Password" class="form-label"></label><input asp-for="Password" class="form-control" /><span asp-validation-for="Password" class="text-danger"></span></div>
+                        <div class="col-md-6"><label asp-for="ConfirmPassword" class="form-label"></label><input asp-for="ConfirmPassword" class="form-control" /><span asp-validation-for="ConfirmPassword" class="text-danger"></span></div>
+                        <div class="col-md-4"><label asp-for="Pin" class="form-label"></label><input asp-for="Pin" class="form-control" maxlength="4" inputmode="numeric" /><span asp-validation-for="Pin" class="text-danger"></span></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Create doctor account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

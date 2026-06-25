@@ -1,0 +1,14 @@
+@model Healthcare.Web.ViewModels.Admin.RejectDoctorViewModel
+@{
+    ViewData["Title"] = "Reject Doctor";
+}
+<div class="row justify-content-center"><div class="col-md-6"><div class="card border-0 shadow-sm"><div class="card-body p-4">
+    <h1 class="h3">Reject doctor request</h1>
+    <form asp-action="Reject" method="post" novalidate>
+        <input asp-for="RequestId" type="hidden" />
+        <div class="mb-3"><label asp-for="Reason" class="form-label"></label><textarea asp-for="Reason" class="form-control" rows="5"></textarea><span asp-validation-for="Reason" class="text-danger"></span></div>
+        <button class="btn btn-danger" type="submit">Reject request</button>
+        <a class="btn btn-link" asp-action="Index">Cancel</a>
+    </form>
+</div></div></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

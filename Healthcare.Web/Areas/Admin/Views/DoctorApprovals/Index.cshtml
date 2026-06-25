@@ -1,0 +1,29 @@
+@model IReadOnlyList<Healthcare.Web.ViewModels.Admin.DoctorApprovalRequestViewModel>
+@{
+    ViewData["Title"] = "Doctor Approval Requests";
+}
+<h1 class="h3 mb-3">Doctor approval requests</h1>
+<div class="card border-0 shadow-sm"><div class="card-body">
+@if (Model.Count == 0)
+{
+    <div class="text-center text-secondary py-4">No pending doctor approval requests.</div>
+}
+else
+{
+    <div class="table-responsive"><table class="table table-hover align-middle">
+        <thead><tr><th>Doctor</th><th>Email</th><th>National ID</th><th>Syndicate #</th><th>Status</th><th></th></tr></thead>
+        <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.DoctorName</td><td>@request.Email</td><td>@request.NationalId</td><td>@request.MedicalSyndicateNumber</td><td><span class="badge text-bg-warning">@request.Status</span></td>
+                <td class="text-end">
+                    <form asp-action="Approve" method="post" class="d-inline"><input type="hidden" name="id" value="@request.Id" /><button class="btn btn-sm btn-success">Approve</button></form>
+                    <a class="btn btn-sm btn-outline-danger" asp-action="Reject" asp-route-id="@request.Id">Reject</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table></div>
+}
+</div></div>

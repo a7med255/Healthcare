@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<section class="hero-card p-5 rounded-4 border bg-white shadow-sm">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+            <span class="badge text-bg-primary mb-3">Secure Healthcare Access</span>
+            <h1 class="display-5 fw-bold text-primary">QR and PIN powered medical history for patients and trusted doctors.</h1>
+            <p class="lead text-secondary">Register, verify your identity with email OTP, receive a unique QR code, and safely share medical history with approved doctors.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary btn-lg" asp-controller="Account" asp-action="RegisterPatient">Register as Patient</a>
+                <a class="btn btn-outline-primary btn-lg" asp-controller="Account" asp-action="RegisterDoctor">Register as Doctor</a>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="health-stat-card p-4 rounded-4">
+                <h2 class="h4">MVP modules</h2>
+                <ul class="list-unstyled mb-0 small">
+                    <li class="mb-2">✓ Email OTP identity verification</li>
+                    <li class="mb-2">✓ QR + PIN protected medical history</li>
+                    <li class="mb-2">✓ Doctor approval workflow</li>
+                    <li>✓ Medical records and prescription images</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

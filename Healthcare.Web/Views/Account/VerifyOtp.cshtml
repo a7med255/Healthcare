@@ -1,0 +1,20 @@
+@model Healthcare.Web.ViewModels.Account.VerifyOtpViewModel
+@{
+    ViewData["Title"] = "Verify Email";
+}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="h3">Verify your email</h1>
+                <p class="text-secondary">Enter the 6-digit OTP sent to your email address.</p>
+                <form asp-action="VerifyOtp" method="post" novalidate>
+                    <div class="mb-3"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" readonly /><span asp-validation-for="Email" class="text-danger"></span></div>
+                    <div class="mb-3"><label asp-for="OtpCode" class="form-label"></label><input asp-for="OtpCode" class="form-control form-control-lg text-center" maxlength="6" inputmode="numeric" /><span asp-validation-for="OtpCode" class="text-danger"></span></div>
+                    <button class="btn btn-primary w-100" type="submit">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

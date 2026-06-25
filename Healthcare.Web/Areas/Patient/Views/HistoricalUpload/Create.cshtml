@@ -1,0 +1,13 @@
+@model Healthcare.Web.ViewModels.Patient.HistoricalUploadViewModel
+@{
+    ViewData["Title"] = "Historical Upload";
+}
+<div class="row justify-content-center"><div class="col-lg-7"><div class="card border-0 shadow-sm"><div class="card-body p-4">
+    <h1 class="h3">Upload historical medical images</h1>
+    <p class="text-secondary">Available during the first month after system launch.</p>
+    <form asp-action="Create" method="post" enctype="multipart/form-data" novalidate>
+        <div class="mb-3"><label asp-for="Files" class="form-label"></label><input asp-for="Files" class="form-control" type="file" multiple accept="image/*,.pdf" /><span asp-validation-for="Files" class="text-danger"></span></div>
+        <button class="btn btn-primary" type="submit">Upload files</button>
+    </form>
+</div></div></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }
